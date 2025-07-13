@@ -78,7 +78,7 @@ curl http://<your-ip>/health
 
 ---
 
-## 📈 Future Extensions(예시
+## 📈 Future Extensions(예시)
 
 - 🧠 LLM + RAG 기반 거주지 질문응답
 - 📊 데이터 분석 기반 기회비용 지표 제공
