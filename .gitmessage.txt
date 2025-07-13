@@ -5,7 +5,8 @@
 # feat: Add health check endpoint to FastAPI
 # fix: Resolve DB connection error on startup
 # docs: Update README with Kubernetes deployment guide
-#
+# 아래 주석 없는 공간에 메세지 작성
+
 # 타입 목록:
 # feat      : 새로운 기능 추가
 # fix       : 버그 수정
