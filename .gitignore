@@ -1,0 +1,191 @@
+# ------------------------------
+# Python 기본 설정
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ------------------------------
+# 가상환경
+# ------------------------------
+venv/
+.venv/
+.Python
+
+# ------------------------------
+# 환경 변수 파일
+# ------------------------------
+.env
+.env.*
+*.env
+
+# ------------------------------
+# FastAPI / 로그
+# ------------------------------
+*.log
+
+# ------------------------------
+# 빌드 산출물
+# ------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+.eggs/
+*.egg
+MANIFEST
+*.spec
+
+# ------------------------------
+# pytest / coverage / mypy
+# ------------------------------
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ------------------------------
+# Docker 관련
+# ------------------------------
+*.pid
+*.pid.lock
+docker-compose.override.yml
+docker-compose.local.yml
+.docker/
+docker.env
+.dockerignore
+
+# Docker Build Cache
+**/tmp/
+**/.temp/
+
+# ------------------------------
+# Kubernetes 관련
+# ------------------------------
+*.yaml~
+*.yml~
+*.bak
+*.tmp
+k8s-secret.yaml  # 민감 정보가 담길 수 있음
+
+# Helm charts, if used
+charts/
+values.override.yaml
+values.local.yaml
+
+# ------------------------------
+# IDE 및 에디터 설정
+# ------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------
+# 시스템 파일
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# 기타 임시 백업 파일
+# ------------------------------
+*.swp
+*.swo
+*~
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# FastAPI / Uvicorn / Starlette
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Virtual environment
+venv/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Docker
+*.pid
+*.pid.lock
+
+# Logs
+*.log
+
+# MacOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local history or backups
+*.swp
+*.swo
+*~

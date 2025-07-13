@@ -1,0 +1,30 @@
+# <타입>: <간결한 변경 요약>
+# (한글로도 작성 가능, imperative tone 권장)
+#
+# 예시:
+# feat: Add health check endpoint to FastAPI
+# fix: Resolve DB connection error on startup
+# docs: Update README with Kubernetes deployment guide
+#
+# 타입 목록:
+# feat      : 새로운 기능 추가
+# fix       : 버그 수정
+# docs      : 문서 변경 (README, 문서 등)
+# style     : 코드 포맷팅, 세미콜론 누락, 공백 등
+# refactor  : 코드 리팩토링 (기능 변화 없음)
+# perf      : 성능 향상
+# test      : 테스트 코드 추가 및 수정
+# chore     : 빌드 업무, 패키지 매니저 수정 등
+# ci        : CI 관련 설정 변경
+# build     : 빌드 시스템 변경, Dockerfile 등
+# infra     : 서버 구성, Kubernetes, Helm 관련 작업
+# revert    : 이전 커밋 되돌리기
+#
+# 본문(선택 사항):
+#  - 무엇을, 왜 변경했는지 상세 설명
+#  - 줄바꿈 없이 한 문단에 작성
+#
+# Footer(선택 사항):
+#  - 관련 이슈 트래킹 번호 연결
+#  - ex) Closes #12, Resolves #34
+
