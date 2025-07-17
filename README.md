@@ -59,6 +59,36 @@ docker run -d -p 8000:8000 pet-happy-api
 
 접속: [http://localhost:8000/health](http://localhost:8000/health)
 
+#### 📦 Install Docker (Ubuntu 기준)
+
+```bash
+# 1. 기존 도커가 있다면 제거
+sudo apt remove docker docker-engine docker.io containerd runc
+
+# 2. 의존 패키지 설치
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg
+
+# 3. GPG 키 등록
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+# 4. Docker 공식 리포지토리 등록
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 5. Docker 설치
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# 6. 사용자에게 docker 권한 부여
+sudo usermod -aG docker $USER
+newgrp docker  # 현재 세션에 바로 적용
+
 ### 3️⃣ Kubernetes 배포
 
 ```bash
