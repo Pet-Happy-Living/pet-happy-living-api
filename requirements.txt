@@ -1,3 +1,9 @@
 fastapi==0.110.0
 uvicorn[standard]==0.29.0
 python-dotenv
+sshtunnel
+psycopg2-binary
+sqlalchemy
+pydantic-settings
+asyncpg
+email-validator
