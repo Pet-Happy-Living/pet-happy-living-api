@@ -1,0 +1,18 @@
+# docker-compose.yml
+
+version: "3.9"
+
+services:
+  pet-happy-api:
+    container_name: pet-happy-api
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - .env
+    environment:
+      - ENV=${ENV}
