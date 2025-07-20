@@ -23,7 +23,7 @@ router = APIRouter()
     500: {"description": "ERROR-500~601: 서버 또는 SQL 오류"}
 })
 async def load_pet_clinics(start: int = 1, end: int = 5, db: AsyncSession = Depends(get_db)):
-    API_KEY = os.getenv("SEOUL_API_KEY", "sample")
+    API_KEY = os.getenv("SEOUL_OPEN_API_KEY", "sample")
     url = f"http://openapi.seoul.go.kr:8088/{API_KEY}/json/LOCALDATA_020301/{start}/{end}/"
 
     async with httpx.AsyncClient() as client:
