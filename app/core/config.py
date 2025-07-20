@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "Pet Happy Service"
     ENV : str = os.getenv("ENV", "dev")
     DEBUG : bool = os.getenv("DEBUG", True)
+
+    # API KEY
+    SEOUL_OPEN_API_KEY: str = os.getenv("SEOUL_OPEN_API_KEY", "your_seoul_open_api_key")
     
     # SSH 정보
     SSH_HOST: str = os.getenv("SSH_HOST","ec2-52-79-101-221.ap-northeast-2.compute.amazonaws.com")
