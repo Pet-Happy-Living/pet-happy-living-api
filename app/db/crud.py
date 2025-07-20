@@ -1,4 +1,4 @@
-from app.models import User
+from app.models.users import User
 from sqlalchemy.future import select
 
 async def get_pet_by_id(db, user_id: int):
