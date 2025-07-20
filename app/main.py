@@ -13,16 +13,19 @@ tunnel = None
 
 @app.on_event("startup")
 def start_ssh_tunnel():
-    logger.info("🚀 FastAPI 서버 시작 중...")
+    logger.info(f"🚀 FastAPI 서버 시작 중...(settings.ENV = {settings.ENV})")
     global tunnel
-    tunnel = SSHTunnelForwarder(
-        (settings.SSH_HOST, settings.SSH_PORT),
-        ssh_username=settings.SSH_USER,
-        ssh_private_key=settings.PRIVATE_KEY_PATH,
-        remote_bind_address=(settings.POSTGRES_HOST, settings.POSTGRES_PORT),
-        local_bind_address=("127.0.0.1", 15432)
-    )
-    tunnel.start()
+    if settings.ENV == "dev":
+        tunnel = SSHTunnelForwarder(
+            (settings.SSH_HOST, settings.SSH_PORT),
+            ssh_username=settings.SSH_USER,
+            ssh_private_key=settings.PRIVATE_KEY_PATH,
+            remote_bind_address=(settings.POSTGRES_HOST, settings.POSTGRES_PORT),
+            local_bind_address=("127.0.0.1", 15432)
+        )
+        tunnel.start()
+    else:
+        logger.info("✅ 운영 환경으로 SSH Tunnel은 비활성화됩니다.")
 
 @app.on_event("shutdown")
 def stop_ssh_tunnel():

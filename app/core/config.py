@@ -4,6 +4,8 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Pet Happy Service"
+    ENV : str = os.getenv("ENV", "dev")
+    DEBUG : bool = os.getenv("DEBUG", True)
     
     # SSH 정보
     SSH_HOST: str = os.getenv("SSH_HOST","ec2-52-79-101-221.ap-northeast-2.compute.amazonaws.com")
@@ -23,10 +25,17 @@ class Settings(BaseSettings):
     REDIS_URL: str = os.getenv("REDIS_URL", "localhost")
 
     class Config:
-        env_file = ".env"  # 환경 변수 파일 경로
+        env_file = ".env"  # 환경 변수 파일 경로 # 기본값은 .env, 동적으로 override됨
 
 
 # 성능을 위해 한번만 로드
 @lru_cache()
 def get_settings():
-    return Settings()
+    # 1️⃣ ENV 환경 변수 먼저 확인
+    current_env = os.getenv("ENV", "dev")
+
+    # 2️⃣ 해당 ENV 값에 따라 .env 파일 선택
+    env_file_path = f".env.{current_env}"
+
+    # 3️⃣ 해당 env_file을 사용하여 Settings 인스턴스 생성
+    return Settings(_env_file=env_file_path)
