@@ -1,10 +1,10 @@
-version: "3.9"
-
 services:
   pet-happy-api:
     extends:
       file: docker-compose.base.yml
       service: pet-happy-api
-    volumes:
-      - ./:/app
+    env_file:
+      - .env.dev  # ✅ 개발 환경용 env 파일
+    environment:
+      - ENV=${ENV}
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
