@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     DEBUG : bool = os.getenv("DEBUG", True)
 
     # API KEY
-    SEOUL_OPEN_API_KEY: str = os.getenv("SEOUL_OPEN_API_KEY", "your_seoul_open_api_key")
+    SEOUL_OPEN_API_KEY: str = os.getenv("SEOUL_OPEN_API_KEY", "sample")
     
     # SSH 정보
     SSH_HOST: str = os.getenv("SSH_HOST","ec2-52-79-101-221.ap-northeast-2.compute.amazonaws.com")
