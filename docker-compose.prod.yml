@@ -1,0 +1,10 @@
+services:
+  pet-happy-api:
+    extends:
+      file: docker-compose.base.yml
+      service: pet-happy-api
+    env_file:
+      - .env.prod  # ✅ 운영 환경용 env 파일
+    environment:
+      - ENV=${ENV}
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
