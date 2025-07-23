@@ -40,5 +40,5 @@ docker compose $COMPOSE_FILES ps
 echo ""
 echo "🌐 [SERVICE URL]"
 echo "📖 API Documentation: http://localhost:8000/docs"
-echo "🔗 Health Check: http://localhost:8000/health"
+echo "🔗 Health Check: http://localhost:8000/api/v1/health"
 echo ""
