@@ -40,5 +40,5 @@ docker compose $COMPOSE_FILES ps
 echo ""
 echo "🌐 [SERVICE URL]"
 echo "📖 API Documentation: http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/docs"
-echo "🔗 Health Check: http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/health"
+echo "🔗 Health Check: http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/api/v1/health"
 echo ""
