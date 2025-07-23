@@ -57,8 +57,9 @@ docker build -t pet-happy-api .
 docker run -d -p 8000:8000 pet-happy-api
 ```
 
-접속 DEV  : [http://localhost:8000/docs](http://localhost:8000/docs)
-접속 PROD : [http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/docs](http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/docs)
+**접속 DEV**  : [http://localhost:8000/docs](http://localhost:8000/docs){:target="_blank"}
+
+**접속 PROD** : [http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/docs](http://ec2-3-37-57-105.ap-northeast-2.compute.amazonaws.com:8000/docs){:target="_blank"}
 
 #### 📦 Install Docker (Ubuntu 기준)
 
