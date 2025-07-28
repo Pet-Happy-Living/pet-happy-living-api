@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pet-happy-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pet-happy-api
+  template:
+    metadata:
+      labels:
+        app: pet-happy-api
+    spec:
+      containers:
+      - name: pet-happy-api-container
+        image: devpsh/pet-happy-living-api:latest
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: pet-happy-api-config

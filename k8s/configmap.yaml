@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pet-happy-api-config
+data:
+  ENV: "dev"
+  POSTGRES_HOST: "ec2-52-79-101-221.ap-northeast-2.compute.amazonaws.com"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DATABASE_NAME: "petple_service"
