@@ -6,7 +6,7 @@ on:
       - test/cicd
 
 env:
-  DOCKER_IMAGE: ${{ secrets.devpsh }}/pet-happy-living-api:latest
+  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/pet-happy-living-api
 
 jobs:
   build-and-push:
