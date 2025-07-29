@@ -8,3 +8,10 @@ pydantic-settings
 asyncpg
 email-validator
 httpx
+# Testing dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-json-report>=1.5.0
+# Visualization dependencies
+matplotlib>=3.7.0
+pandas>=2.0.0
