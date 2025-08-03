@@ -2,7 +2,6 @@
 # 공공 API 연동 및 데이터 적재
 # =============================
 import httpx
-import os
 
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,9 +10,10 @@ from typing import List
 from app.db.session import get_db
 from app.models.pet_clinic import PetClinic
 from app.schemas.pet_clinic import ClinicRow
+from app.core.config import get_settings
 
 router = APIRouter()
-
+settings = get_settings()
 
 @router.get("/load-pet-clinics", response_model=List[ClinicRow], responses={
     200: {"description": "INFO-000: 정상 처리되었습니다."},
@@ -23,7 +23,7 @@ router = APIRouter()
     500: {"description": "ERROR-500~601: 서버 또는 SQL 오류"}
 })
 async def load_pet_clinics(start: int = 1, end: int = 5, db: AsyncSession = Depends(get_db)):
-    API_KEY = os.getenv("SEOUL_OPEN_API_KEY", "sample")
+    API_KEY = settings.SEOUL_OPEN_API_KEY
     url = f"http://openapi.seoul.go.kr:8088/{API_KEY}/json/LOCALDATA_020301/{start}/{end}/"
 
     async with httpx.AsyncClient() as client:
